@@ -18,11 +18,10 @@ export class ResistorColor {
     else this.colors = colors;
   }
 
-  // I don't like this and I feel like there's a more clever way to do this than number -> string -> number
   calculate(colors: string[]): number {
-    let colorList: string[] = [];
+    let colorList: number[] = [];
     colors.forEach((code) => {
-        colorList.push(this.colorLabels[code].toString());
+        colorList.push(this.colorLabels[code]);
     }); 
     return parseInt(colorList.slice( 0, 2).join(""));
   }
